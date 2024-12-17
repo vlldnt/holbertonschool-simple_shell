@@ -12,13 +12,7 @@
 int _pid(void);
 int _ppid(void);
 
-/*Main simple shell function*/
-int main(void);
-
-/* Tools */
-char *read_input(void);
-
-
-
+/*Tools functions*/
+int _prompt(void);
 
 #endif

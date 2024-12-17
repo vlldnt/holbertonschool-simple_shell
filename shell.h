@@ -8,6 +8,11 @@
 #include <sys/types.h>
 #include <sys/wait.h>
 
+/*Get PID and get PPID */
+int _pid(void);
+int _ppid(void);
 
+/*Tools functions*/
+int _prompt(void);
 
 #endif

@@ -2,10 +2,12 @@
 
 /**
  * main - super simple shell
- * Return (0)
+ * Return: (0)
  */
 
-int main(int argc, char *argv)
+int main(void)
 {
-	
+	 _prompt();
+
+return (0);
 }

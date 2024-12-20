@@ -1,7 +1,7 @@
 SIMPLE SHELL : WE BE UPDATED SOON
 
 | File name          | Description                                                                  |
-| -----------------: | :--: | ---------------------------------------------------------------------------- |
+| -----------------: |  ---------------------------------------------------------------------------- |
 | [main.c](https://github.com/vlldnt/holbertonschool-simple_shell/blob/main/main.c)  | Contains the main function for our `simple_shell`  |
 | [handle_sigint.c](https://github.com/vlldnt/holbertonschool-simple_shell/blob/main/handle_sigint.c)     | Handle the `SIGINT` (Signal Interrup) CTRL + C |
 | [prompt.c](https://github.com/vlldnt/holbertonschool-simple_shell/blob/main/prompt.c)       |  Display the prompt, checking if input is from a terminal (`isatty()`)  |

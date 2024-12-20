@@ -6,7 +6,7 @@
 
 void prompt(void)
 {
-	char *cwd[BUFF_SIZE];
+	char cwd[BUFF_SIZE];
 
 	if (getcwd(cwd, sizeof(cwd)) != NULL) /* get the Current Working Directory */
 	{

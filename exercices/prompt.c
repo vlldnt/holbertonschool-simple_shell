@@ -1,42 +1,21 @@
 #include "shell.h"
 
 /**
- * _prompt - get a prompt and wait user to write command
- * and return the command in the output
- * Return: 0
+ * prompt - check if input is from terminal, and display prompt
  */
 
-int _prompt(void)
+void prompt(void)
 {
-	size_t n = 0;
-	char *buff = NULL;
-	int read, i = 0;
-	char *argv[64], *token;
+	char *cwd[BUFF_SIZE];
 
-	printf("$Adrien-Hugo_super-simple-shell: ");
-	read = getline(&buff, &n, stdin);
-	if (read == -1)
+	if (getcwd(cwd, sizeof(cwd)) != NULL) /* get the Current Working Directory */
 	{
-		free(buff);
-		return (1);
+		if (isatty(STDIN_FILENO)) /* check if we are in a terminal  */
+		{
+			write(STDOUT_FILENO, "HugoAdrien@", 11);
+			write(STDOUT_FILENO, cwd, strlen(cwd));
+			write(STDOUT_FILENO, "$ ", 2);
+		}
 	}
-
-	buff[strcspn(buff, "\n")] = 0;
-	token = strtok(buff, " ");
-	while (token != NULL)
-	{
-		argv[i++] = token;
-		token = strtok(NULL, " ");
-	}
-	argv[i] = NULL;
-	if (execvp(argv[0], argv) == -1)
-	{
-		perror("Error executing command");
-		free(buff);
-		return (1);
-	}
-
-	free(buff);
-return (0);
+	write(STDOUT_FILENO, "HugoAdrien@shell$ ", 18); /* Default prompt if getcwd fails */
 }
-

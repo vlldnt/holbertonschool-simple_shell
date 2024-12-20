@@ -13,6 +13,7 @@
 
 extern char **environ;
 
+int main(void);
 void prompt(void);
 char *read_input(void);
 void handle_sigint(int signal);

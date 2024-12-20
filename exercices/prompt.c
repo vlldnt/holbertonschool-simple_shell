@@ -17,5 +17,7 @@ void prompt(void)
 			write(STDOUT_FILENO, "$ ", 2);
 		}
 	}
-	write(STDOUT_FILENO, "HugoAdrien@shell$ ", 18); /* Default prompt if getcwd fails */
+	else
+	/* Default prompt if getcwd fails */
+		write(STDOUT_FILENO, "HugoAdrien@shell$ ", 18);
 }

@@ -15,9 +15,7 @@ extern char **environ;
 
 void prompt(void);
 char *read_input(void);
-char **split_string(char *command);
-int execute(char **args);
-char *command_path(char *command);
-void free_memory(char **args);
+void handle_sigint(int signal);
+
 
 #endif

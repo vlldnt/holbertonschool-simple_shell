@@ -7,6 +7,18 @@
 
 int main(void)
 {
-	prompt();
+	char *input; 
+
+	signal(SIGINT, handle_sigint);
+
+	while (1)
+	{
+		prompt(); /* Display prompt */
+
+		input = read_input();
+		if (input == NULL)
+			break;
+	}
+
 return (0);
 }

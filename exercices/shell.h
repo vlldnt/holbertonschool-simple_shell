@@ -18,6 +18,7 @@ void prompt(void);
 char *read_input(void);
 void handle_sigint(int signal);
 char **split_string(char *command);
+char *find_executable(char *command);
 
 
 #endif

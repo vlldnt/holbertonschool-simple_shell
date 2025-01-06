@@ -8,27 +8,31 @@
 
 char **split_string(char *command)
 {
-	char **cmd_array = NULL;
-	char *cmd_token = NULL;
+	char **array = NULL;
+	char *token = NULL;
 	size_t i = 0;
+	size_t buffer_size = BUFF_SIZE;
+	size_t re_alloc = 2;
 
-	cmd_array = malloc(sizeof(char *) * BUFF_SIZE);
-	if (!cmd_array)
+	array = malloc(sizeof(char *) * BUFF_SIZE);
+	if (!array)
 	{
 		fprintf(stderr, "Error, memory allocation failed\n");
-		free(cmd_array);
+		free(array);
 		return (NULL);
 	}
 
-	cmd_token = strtok(command, " ");
-	while (cmd_token)
+	token = strtok(command, " ");
+	while (token)
 	{
-		cmd_array[i] = strdup(cmd_token);
-		cmd_token = strtok(NULL, " ");
+		if (i >= buffer_size)
+			array = realloc(array, sizeof(char *) * re_alloc);
+		array[i] = strdup(token);
+		token = strtok(NULL, " ");
 		i++;
 	}
 
-	cmd_array[i] = NULL;
+	array[i] = NULL;
 
-return (cmd_array);
+return (array);
 }

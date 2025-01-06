@@ -21,7 +21,7 @@ int main(void)
                 input = read_input(); /* read the input written */
                 if (input == NULL)
                         break;
-                printf("Test input:\nCommand written : %s\n", input);
+                printf("Test read_input:\nCommand written : %s\n", input);
 
                 input_copy = strdup(input);
                 if (!input_copy)

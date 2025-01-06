@@ -14,14 +14,18 @@ char **split_string(char *command)
 
 	cmd_array = malloc(sizeof(char *) * BUFF_SIZE);
 	if (!cmd_array)
+	{
+		fprintf(stderr, "Error, memory allocation failed\n");
+		free(cmd_array);
 		return (NULL);
+	}
 
 	cmd_token = strtok(command, " ");
 	while (cmd_token)
 	{
-		i++;
 		cmd_array[i] = strdup(cmd_token);
 		cmd_token = strtok(NULL, " ");
+		i++;
 	}
 
 	cmd_array[i] = NULL;

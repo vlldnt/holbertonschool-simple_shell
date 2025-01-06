@@ -21,17 +21,26 @@ int main(void)
 		input = read_input(); /* read the input written */
 		if (input == NULL)
 			break;
+		printf("Command written : %s", input);
+
+
+
 		test = split_string(input);
 		if (!test)
 		{
 			free(test);
-			return(1);
+			return (1);
 		}
-		for (i = 0; test[i] != NULL; i++)
+
+		for (i = 0 ; test[i] != NULL; i++)
 		{
-			printf("argv[%d] : %s\n",i, test[i]);
-			free(test[i]);
+			if (i == 0)
+				printf("Command : %s\n", test[0]);
+			else
+				printf("argument[%d] : %s\n", i, test[i]);
 		}
+		free(test);
+		free(input);
 	}
 return (0);
 }

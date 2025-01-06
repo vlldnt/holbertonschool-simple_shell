@@ -41,7 +41,7 @@ int main(void)
                 executable_path = find_executable(test[0]);
                 if (executable_path)
                 {
-                        printf("Test find_executable:\nExecutable found at: %s\n", executable_path);
+                        printf("Test find_executable:\nExecutable found at: %s\n\n", executable_path);
                         free(executable_path);
                 }
                 else

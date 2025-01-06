@@ -25,7 +25,7 @@ char *find_executable(char *command)
 		if (!full_path)
 			break;
 		/*Concatenate both to create the full path*/
-		snprintf(full_path, len, "%s%s", token, command);
+		snprintf(full_path, len, "%s/%s", token, command);
 
 		if (access(full_path, X_OK) == 0) /* check if full_path can be executed */
 		{

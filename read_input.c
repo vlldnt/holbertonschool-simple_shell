@@ -15,12 +15,6 @@ char *read_input(void)
 
 	if (read == -1 || input == NULL)
 	{
-		if (errno == EINTR) /* handle CTRL+ C interruption system call*/
-		{
-			write(STDOUT_FILENO, "\n", 1);
-			return (NULL);
-		}
-
 		write(STDOUT_FILENO, "\n", 1);
 		free(input);
 		exit(0);

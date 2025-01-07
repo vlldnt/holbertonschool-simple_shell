@@ -29,7 +29,7 @@ int execute_command(char **array)
 	pid = fork();
 	if (pid == -1)
 	{
-		perror("Error fork:");
+		perror("Error fork");
 		free(command_path);
 		return (1);
 	}
@@ -37,7 +37,7 @@ int execute_command(char **array)
 	{
 		if (execve(command_path, array, environ) == -1)
 		{
-			perror("Error execve:");
+			perror("Error execve");
 			free(command_path);
 			exit(1);
 		}

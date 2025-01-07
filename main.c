@@ -21,10 +21,11 @@ int main(void)
 		if (!input)
 			break;
 
-		if (strcmp(input, "exit") == 0)
+		if (strcmp(input, "exit") == 0 )
 		{
+			printf("test exit");
 			free(input);
-			exit(1);
+			exit(EXIT_SUCCESS);
 		}
 
 		if (strcmp(input, "\n") == 0 || strlen(input) == 0)

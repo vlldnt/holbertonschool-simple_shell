@@ -8,7 +8,7 @@
 int main(void)
 {
 	char *input, **args;
-
+	int len;
 
 	signal(SIGINT, handle_sigint);
 
@@ -21,27 +21,25 @@ int main(void)
 		if (!input)
 			break;
 
-		if (strcmp(input, "\n") == 0 || strlen(input) == 0)
-		{
-			free(input);
-			continue;
-		}
+		len = strlen(input) - 1;
 
-		args = split_string(input);
+		if (input[len] == '\n')
+			input[len] = '\0';
 
-		if (strcmp(args[0], "exit") == 0)
+		if (strcmp(input, "exit") == 0)
 		{
-			free_ressources(args);
 			free(input);
 			exit(0);
 		}
+
+		args = split_string(input);
 
 		if (!args)
 		{
 			free(input);
 			continue;
-		}
 
+		}
 		execute_command(args);
 		free(input);
 		free_ressources(args);

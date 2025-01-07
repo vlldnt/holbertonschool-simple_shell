@@ -30,9 +30,9 @@ int exec_builtin(char **args)
 		print_env();
 		return (1);
 	}
-	if (strcmp(args[0], "exit") == 0)
-	{
+
+	if (strcmp(args[0], "exit") == 0 && args[1] != NULL)
 		return (1);
-	}
-return (0);
+
+	return (0);
 }

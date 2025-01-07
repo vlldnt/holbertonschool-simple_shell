@@ -14,8 +14,7 @@ int main(void)
 
 	while (1)
 	{
-		if (isatty(STDIN_FILENO))
-			prompt();
+		prompt();
 
 		input = read_input();
 		if (!input)

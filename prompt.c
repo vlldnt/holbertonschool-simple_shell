@@ -8,16 +8,19 @@ void prompt(void)
 {
 	char cwd[BUFF_SIZE];
 
-	if (getcwd(cwd, sizeof(cwd)) != NULL) /* get the Current Working Directory */
+	if (isatty(STDIN_FILENO))
 	{
-		if (isatty(STDIN_FILENO)) /* check if we are in a terminal  */
+		if (getcwd(cwd, sizeof(cwd)) != NULL) /* get the Current Working Directory */
 		{
-			write(STDOUT_FILENO, "HugoAdrien@", 11);
-			write(STDOUT_FILENO, cwd, strlen(cwd));
-			write(STDOUT_FILENO, "$ ", 2);
+			if (isatty(STDIN_FILENO)) /* check if we are in a terminal  */
+			{
+				write(STDOUT_FILENO, "HugoAdrien@", 11);
+				write(STDOUT_FILENO, cwd, strlen(cwd));
+				write(STDOUT_FILENO, "$ ", 2);
+			}
 		}
+		else
+			/* Default prompt if getcwd fails */
+			write(STDOUT_FILENO, "HugoAdrien@shell$ ", 18);
 	}
-	else
-	/* Default prompt if getcwd fails */
-		write(STDOUT_FILENO, "HugoAdrien@shell$ ", 18);
 }

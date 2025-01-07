@@ -20,5 +20,7 @@ void handle_sigint(int signal);
 char **split_string(char *command);
 char *find_executable(char *command);
 char *_getenv(const char *name, char **environ);
+int execute_command(char **array);
+
 
 #endif

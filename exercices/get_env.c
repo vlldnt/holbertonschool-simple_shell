@@ -1,5 +1,5 @@
 #include "shell.h"
-/*
+/**
  * _getenv - Find the vamue of the environnement var
  * @name: name of the env to find
  * @environ: Environment list

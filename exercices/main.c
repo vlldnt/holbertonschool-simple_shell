@@ -40,14 +40,12 @@ int main(void)
                 /* Test the executable path */
                 executable_path = find_executable(test[0]);
                 if (executable_path)
-                {
+		{
                         printf("Test find_executable:\nExecutable found at: %s\n\n", executable_path);
                         free(executable_path);
-                }
+		}
                 else
-                {
                         printf("Test find_executable:\nExecutable not found\n\n");
-                }
 
                 for (i = 0; test[i] != NULL; i++)
                 {

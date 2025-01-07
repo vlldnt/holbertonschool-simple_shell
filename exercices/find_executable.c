@@ -6,7 +6,7 @@
  */
 char *find_executable(char *command)
 {
-	char *path = getenv("PATH");
+	char *path = _getenv("PATH", environ);
 	char *path_copy, *token, *full_path;
 	size_t len;
 
@@ -25,7 +25,7 @@ char *find_executable(char *command)
 		if (!full_path)
 			break;
 		/*Concatenate both to create the full path*/
-		snprintf(full_path, len, "%s/%s", token, command);
+		sprintf(full_path, "%s/%s", token, command);
 
 		if (access(full_path, X_OK) == 0) /* check if full_path can be executed */
 		{

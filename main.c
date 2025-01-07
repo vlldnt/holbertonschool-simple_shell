@@ -1,25 +1,41 @@
 #include "shell.h"
 
 /**
- * main - main function for the simple shell
- * Return: 0
+ * main - main fucntion to launch our simple shell
+ * Return: 0 at the end
  */
 
 int main(void)
 {
-	char *input;
+	char *input, **args;
+	int status;
 
-	/* Set up signal handler for SIGINT CTRL+C */
+
 	signal(SIGINT, handle_sigint);
 
-	while (1) /* Infinite loop (wait for EOF) */
+	while (1)
 	{
-		prompt(); /* Display prompt */
+		if (isatty(STDIN_FILENO))
+			prompt();
 
-		input = read_input(); /* read the input written */
-		if (input == NULL)
+		input = read_input();
+		if (!input)
 			break;
-	}
 
+		args = split_string(input);
+		if (!args)
+		{
+			free(input);
+			continue;
+		}
+
+		status = execute_command(args);
+		free(input);
+		free(args);
+
+		if (status == 0)
+			break;
+
+	}
 return (0);
 }

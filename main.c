@@ -27,12 +27,6 @@ int main(void)
 			continue;
 		}
 
-		if (strcmp(input, "exit") == 0)
-		{
-			free(input);
-			break;
-		}
-
 		args = split_string(input);
 		if (!args)
 		{

@@ -16,14 +16,13 @@ int execute_command(char **array)
 		return (1);
 
 	if (exec_builtin(array))
-		return (1);
+		return (0);
 
 	command_path = find_executable(array[0]);
 
 	if (!command_path)
 	{
 		fprintf(stderr, "%s: command not found\n", array[0]);
-		free(command_path);
 		return (1);
 	}
 
@@ -31,6 +30,7 @@ int execute_command(char **array)
 	if (pid == -1)
 	{
 		perror("Error fork:");
+		free(command_path);
 		return (1);
 	}
 	if (pid == 0)
@@ -47,5 +47,5 @@ int execute_command(char **array)
 
 	free(command_path);
 
-return (1);
+return (0);
 }

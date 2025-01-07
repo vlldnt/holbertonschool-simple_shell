@@ -32,8 +32,7 @@ int exec_builtin(char **args)
 	}
 	if (strcmp(args[0], "exit") == 0)
 	{
-		free(args);
-		exit(0);
+		return (1);
 	}
 return (0);
 }

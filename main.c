@@ -21,6 +21,12 @@ int main(void)
 		if (!input)
 			break;
 
+		if (strcmp(input, "exit") == 0)
+		{
+			free(input);
+			exit(1);
+		}
+
 		if (strcmp(input, "\n") == 0 || strlen(input) == 0)
 		{
 			free(input);

@@ -19,20 +19,21 @@ int main(void)
 		input = read_input();
 		if (!input)
 			break;
+		if (strcmp(input, "\n") == 0 || strlen(input) == 0)
+		{
+			free(input);
+			continue;
+		}
 
 		len = strlen(input) - 1;
-
 		if (input[len] == '\n')
 			input[len] = '\0';
-
 		if (strcmp(input, "exit") == 0)
 		{
 			free(input);
 			exit(0);
 		}
-
 		args = split_string(input);
-
 		if (!args)
 		{
 			free(input);

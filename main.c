@@ -8,7 +8,6 @@
 int main(void)
 {
 	char *input, **args;
-	int status;
 
 
 	signal(SIGINT, handle_sigint);
@@ -21,6 +20,12 @@ int main(void)
 		input = read_input();
 		if (!input)
 			break;
+
+		if (strcmp(input, "\n") == 0 || strlen(input) == 0)
+		{
+			free(input);
+			continue;
+		}
 
 		if (strcmp(input, "exit") == 0)
 		{
@@ -35,12 +40,9 @@ int main(void)
 			continue;
 		}
 
-		status = execute_command(args);
+		execute_command(args);
 		free(input);
 		free_ressources(args);
-
-		if (status == 0)
-			break;
 	}
 return (0);
 }

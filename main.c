@@ -22,6 +22,12 @@ int main(void)
 		if (!input)
 			break;
 
+		if (strcmp(input, "exit") == 0)
+		{
+			free(input);
+			break;
+		}
+
 		args = split_string(input);
 		if (!args)
 		{
@@ -31,11 +37,10 @@ int main(void)
 
 		status = execute_command(args);
 		free(input);
-		free(args);
+		free_ressources(args);
 
 		if (status == 0)
 			break;
-
 	}
 return (0);
 }

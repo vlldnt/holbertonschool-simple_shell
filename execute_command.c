@@ -15,11 +15,15 @@ int execute_command(char **array)
 	if (!array)
 		return (1);
 
+	if (exec_builtin(array))
+		return (1);
+
 	command_path = find_executable(array[0]);
 
 	if (!command_path)
 	{
 		fprintf(stderr, "%s: command not found\n", array[0]);
+		free(command_path);
 		return (1);
 	}
 
@@ -34,6 +38,7 @@ int execute_command(char **array)
 		if (execve(command_path, array, environ) == -1)
 		{
 			perror("Error execve:");
+			free(command_path);
 			exit(1);
 		}
 	}

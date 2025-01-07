@@ -40,6 +40,7 @@ char *find_executable(char *command)
 		token = strtok(NULL, ":");
 	}
 	free(path_copy);
+	free(token);
 
 return (NULL);
 }

@@ -14,6 +14,9 @@ char *find_executable(char *command)
 		return (strdup(command));
 
 	path_copy = strdup(path); /*create a copy of the PATH*/
+	if (!path_copy)
+		return (NULL);
+
 	token = strtok(path_copy, ":"); /* divide PATH in array*/
 
 	while (token)
@@ -32,7 +35,6 @@ char *find_executable(char *command)
 			free(path_copy);
 			return (full_path);
 		}
-
 		free(full_path);
 
 		token = strtok(NULL, ":");

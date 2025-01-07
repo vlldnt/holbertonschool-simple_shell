@@ -5,34 +5,29 @@
  * @command: the command entered
  * Return: args (array of the command written)
  */
-
 char **split_string(char *command)
 {
-	char **array = NULL;
-	char *token = NULL;
-	size_t i = 0;
-	size_t buffer_size = BUFF_SIZE;
-	size_t re_alloc = 2;
+    char **args = malloc(sizeof(char *) * BUFF_SIZE);
+    char *token;
+    size_t i = 0, j = 0;
 
-	array = malloc(sizeof(char *) * BUFF_SIZE);
-	if (!array)
-	{
-		fprintf(stderr, "Error, memory allocation failed\n");
-		free(array);
-		return (NULL);
-	}
+    if (!args)
+        return (NULL);
 
-	token = strtok(command, " ");
-	while (token)
-	{
-		if (i >= buffer_size)
-			array = realloc(array, sizeof(char *) * re_alloc);
-		array[i] = strdup(token);
-		token = strtok(NULL, " ");
-		i++;
-	}
-
-	array[i] = NULL;
-
-return (array);
+    token = strtok(command, " \n\t");
+    while (token)
+    {
+        args[i] = strdup(token);
+        if (!args[i])
+        {
+            for (; j < i; j++)
+                free(args[j]);
+            free(args);
+            return (NULL);
+        }
+        i++;
+        token = strtok(NULL, " \n\t");
+    }
+    args[i] = NULL;
+    return (args);
 }

@@ -21,13 +21,6 @@ int main(void)
 		if (!input)
 			break;
 
-		if (strcmp(input, "exit") == 0 )
-		{
-			printf("test exit");
-			free(input);
-			exit(EXIT_SUCCESS);
-		}
-
 		if (strcmp(input, "\n") == 0 || strlen(input) == 0)
 		{
 			free(input);
@@ -35,6 +28,14 @@ int main(void)
 		}
 
 		args = split_string(input);
+
+		if (strcmp(args[0], "exit") == 0)
+		{
+			free_ressources(args);
+			free(input);
+			exit(0);
+		}
+
 		if (!args)
 		{
 			free(input);

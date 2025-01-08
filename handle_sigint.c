@@ -10,7 +10,7 @@ void handle_sigint(int signal)
 	char cwd[BUFF_SIZE];
 
 	signal = signal; /* Signal unused here */
-	
+
 	write(STDOUT_FILENO, "\n", 1);
 
 	if (getcwd(cwd, sizeof(cwd)) != NULL) /* get the Current Working Directory */

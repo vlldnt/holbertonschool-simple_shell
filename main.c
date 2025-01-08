@@ -8,7 +8,6 @@
 int main(void)
 {
 	char *input, **args;
-	int len;
 
 	signal(SIGINT, handle_sigint);
 
@@ -25,9 +24,9 @@ int main(void)
 			continue;
 		}
 
-		len = strlen(input) - 1;
-		if (input[len] == '\n')
-			input[len] = '\0';
+		if (input[strlen(input) - 1] == '\n')
+                        input[strlen(input) -1] = '\0';
+
 		if (strcmp(input, "exit") == 0)
 		{
 			free(input);

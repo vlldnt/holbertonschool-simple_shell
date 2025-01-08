@@ -14,9 +14,8 @@ char *read_input(void)
 	read = getline(&input, &n, stdin);
 	if (read == -1)
 	{
-		fprintf(stderr, "Logout...\nDisconnected from Simple-Shell.\n");
 		free(input);
-		exit(1);
+		exit(0);
 	}
 
 return (input);

@@ -27,7 +27,6 @@ int main(void)
 
 		if (strcmp(input, "exit") == 0)
 		{
-			fprintf(stderr, "Logout...\nDisconnected from Simple-Shell.\n");
 			free(input);
 			exit(0);
 		}

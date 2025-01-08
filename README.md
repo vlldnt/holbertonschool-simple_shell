@@ -10,3 +10,5 @@ SIMPLE SHELL : WE BE UPDATED SOON
 | [man_1_simple_shell](https://github.com/vlldnt/holbertonschool-simple_shell/blob/main/man_1_simple_shell) | Man page of the simple shell   |
 | [shell.h](https://github.com/vlldnt/holbertonschool-simple_shell/blob/main/shell.h) | Header of the project  |
 | [README.md](https://github.com/vlldnt/holbertonschool-simple_shell/blob/main/README.md) | Description of our project |
+
+![Workflow](https://ibb.co/smbk0YT)

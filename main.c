@@ -10,7 +10,6 @@ int main(void)
 	char *input, **args;
 
 	signal(SIGINT, handle_sigint);
-
 	while (1)
 	{
 		prompt();

@@ -12,6 +12,7 @@ char *read_input(void)
 	ssize_t read;
 
 	read = getline(&input, &n, stdin);
+
 	if (read == -1)
 	{
 		free(input);

@@ -11,10 +11,17 @@ char **split_string(char *command)
 	char *token;
 	size_t i = 0, j = 0;
 
+
 	if (!args)
 		return (NULL);
 
 	token = strtok(command, " \n\t");
+
+	if (!token)
+	{
+		free(args);
+		return (NULL);
+	}
 
 	while (token)
 	{

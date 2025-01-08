@@ -23,8 +23,8 @@ int main(void)
 			continue;
 		}
 
-		if (input[strlen(input)] == '\n')
-                        input[strlen(input)] = '\0';
+		if (input[strlen(input) - 1] == '\n')
+                        input[strlen(input) - 1] = '\0';
 
 		if (strcmp(input, "exit") == 0)
 		{
@@ -36,7 +36,6 @@ int main(void)
 		{
 			free(input);
 			continue;
-
 		}
 		handle_redirection(args);
 		execute_command(args);

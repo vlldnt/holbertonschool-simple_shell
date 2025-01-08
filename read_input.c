@@ -9,16 +9,16 @@ char *read_input(void)
 {
 	char *input = NULL;
 	size_t n = 0;
-	int read;
+	ssize_t read;
 
 	read = getline(&input, &n, stdin);
-
-	if (read == -1 || input == NULL)
+	
+	if (read == -1)
 	{
-		printf("error readinpout");
-		write(STDOUT_FILENO, "\n", 1);
+		fprintf(stderr, "\nLogout...\nDisconnected from Simple-Shell.\n");
 		free(input);
-		exit(0);
+		exit(1);
 	}
+
 return (input);
 }

@@ -11,4 +11,4 @@ SIMPLE SHELL : WE BE UPDATED SOON
 | [shell.h](https://github.com/vlldnt/holbertonschool-simple_shell/blob/main/shell.h) | Header of the project  |
 | [README.md](https://github.com/vlldnt/holbertonschool-simple_shell/blob/main/README.md) | Description of our project |
 
-![Workflow](https://ibb.co/smbk0YT)
+!()https://i.ibb.co/gjmH5K0/Simple-Shell-Flow-Shart.png

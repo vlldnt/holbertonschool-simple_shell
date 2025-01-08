@@ -24,5 +24,6 @@ int execute_command(char **array);
 int exec_builtin(char **args);
 void print_env(void);
 void free_ressources(char **args);
+void handle_redirection(char **args);
 
 #endif

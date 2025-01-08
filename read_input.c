@@ -15,6 +15,7 @@ char *read_input(void)
 
 	if (read == -1 || input == NULL)
 	{
+		printf("error readinpout");
 		write(STDOUT_FILENO, "\n", 1);
 		free(input);
 		exit(0);

@@ -15,7 +15,7 @@ char *read_input(void)
 	
 	if (read == -1)
 	{
-		fprintf(stderr, "\nLogout...\nDisconnected from Simple-Shell.\n");
+		fprintf(stderr, "Logout...\nDisconnected from Simple-Shell.\n");
 		free(input);
 		exit(1);
 	}

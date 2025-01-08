@@ -22,12 +22,12 @@ int main(void)
 			free(input);
 			continue;
 		}
-
 		if (input[strlen(input) - 1] == '\n')
-                        input[strlen(input) - 1] = '\0';
+			input[strlen(input) - 1] = '\0';
 
 		if (strcmp(input, "exit") == 0)
 		{
+			fprintf(stderr, "Logout...\nDisconnected from Simple-Shell.\n");
 			free(input);
 			exit(0);
 		}

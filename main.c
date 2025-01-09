@@ -35,7 +35,6 @@ int main(void)
 			free(input);
 			continue;
 		}
-		handle_redirection(args);
 		execute_command(args);
 		free(input);
 		free_ressources(args);

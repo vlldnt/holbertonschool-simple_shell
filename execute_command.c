@@ -39,7 +39,7 @@ int execute_command(char **array)
 		{
 			perror("Error execve");
 			free(command_path);
-			exit(1);
+			exit(2);
 		}
 	}
 	else

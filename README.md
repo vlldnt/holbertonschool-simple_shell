@@ -6,9 +6,9 @@ The Simple Shell project involves creating a basic command-line interpreter in C
 
 ## Simple Shell flowchart
 
-Before starting coding we've made a basic flowchar helping to understand the simple shell and how to organise our work for the rest of the project
+Before starting coding we've made a [flowchar](https://i.goopics.net/946u64.png) helping to understand the simple shell and how to organise our work for the rest of the project
 
-![alt tag](https://i.ibb.co/gjmH5K0/Simple-Shell-Flow-Shart.png)
+![simpleShell-flowchart](https://i.goopics.net/946u64.png)
 
 ## Requirements
 
@@ -16,9 +16,9 @@ Our project has been coded on Ubuntu 22.04 and gcc is version 13.2.0
 
 *List of allowed fuctions dans systems calls :*
 
-All the function in `string.h`, `access`, `chdir`, `close`, `closedir`, `execve`, `exit`, `_exit`, `fflush`, `fork`, `free`, `getcwd`, `getline`, `getpid` `isatty` `kill` `malloc`, `open`, `opendir`, `perror`, `printf`, `fprintf` `vfprintf` `sprintf`, `putchar`, `read`, `readdir`, `signal`, `stat`, `lstat`, `fstat`, `strtok`, `wait`, `waitpid`, `wait3`, `wait4`, `write`
+All the functions in `string.h`and `access`, `chdir`, `close`, `closedir`, `execve`, `exit`, `_exit`, `fflush`, `fork`, `free`, `getcwd`, `getline`, `getpid` `isatty` `kill` `malloc`, `open`, `opendir`, `perror`, `printf`, `fprintf` `vfprintf` `sprintf`, `putchar`, `read`, `readdir`, `signal`, `stat`, `lstat`, `fstat`, `strtok`, `wait`, `waitpid`, `wait3`, `wait4`, `write`
 
-## What's in the repository ?
+## Quick overview of the repository
 
 | File name          | Description                                                                  |
 | -----------------: |  ---------------------------------------------------------------------------- |

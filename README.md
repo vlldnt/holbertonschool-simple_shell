@@ -95,7 +95,7 @@ backups  cache  crash  lib  local  lock  log  mail  metrics  opt  run  snap  spo
 $ ^C
 $ ^C
 $ ^C
-(Here `CTRL+D`)
+--> Here `CTRL+D` <---
 julien@ubuntu:~/shell$ 
 ```
 

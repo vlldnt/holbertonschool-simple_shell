@@ -4,13 +4,13 @@
 
 The Simple Shell project involves creating a basic command-line interpreter in C that mimics a Unix shell. It allows users to execute commands, handle errors, and implement features like path handling and environment variables. Few built-in commands are implemented like `end` and `exit`.
 
-## Simple Shell flowchart
+## Simple Shell flowchart :thought_balloon:
 
 Before starting coding we've made a [flowchar](https://i.goopics.net/946u64.png) helping to understand the simple shell and how to organise our work for the rest of the project
 
 ![simpleShell-flowchart](https://i.goopics.net/946u64.png)
 
-## Requirements
+## Requirements :bulb:
 
 Our project has been coded on Ubuntu 22.04 and gcc is version 13.2.0
 
@@ -18,12 +18,12 @@ Our project has been coded on Ubuntu 22.04 and gcc is version 13.2.0
 
 All the functions in `string.h`and `access`, `chdir`, `close`, `closedir`, `execve`, `exit`, `_exit`, `fflush`, `fork`, `free`, `getcwd`, `getline`, `getpid` `isatty` `kill` `malloc`, `open`, `opendir`, `perror`, `printf`, `fprintf` `vfprintf` `sprintf`, `putchar`, `read`, `readdir`, `signal`, `stat`, `lstat`, `fstat`, `strtok`, `wait`, `waitpid`, `wait3`, `wait4`, `write`
 
-### Compilation
+### Compilation :computer:
 The program will be compiled enabling most of the commons and optional warning options and treating them all as errors, by following strict C language rules and using the older C89 santard with some extra features specific to GCC and ignoring warnings about mismatched printf style format strings: 
 
 ``gcc -Wall -Werror -Wextra -pedantic -std=gnu89 -Wno-format *.c -o prog``
 
-### Some rules to follow : 
+### Some rules to follow :hammer:
 - Allowed editors: vi, vim, emacs
 - All your files will be compiled on Ubuntu 20.04 LTS using gcc, using the options -Wall -Werror -Wextra -pedantic -std=gnu89
 - All your files should end with a new line
@@ -34,7 +34,7 @@ The program will be compiled enabling most of the commons and optional warning o
 - All your header files should be include guarded
 - Use system calls only when you need to
 
-## Quick overview of the repository
+## Quick overview of the repository :bookmark_tabs:
 | File name          | Description                                                                  |
 | -----------------: |  ---------------------------------------------------------------------------- |
 | [builtin.c](https://github.com/vlldnt/holbertonschool-simple_shell/blob/main/builtin.c) | Handle the execution of the built in "exit" and "env" |
@@ -51,7 +51,7 @@ The program will be compiled enabling most of the commons and optional warning o
 | [README.md](https://github.com/vlldnt/holbertonschool-simple_shell/blob/main/README.md) | Description of our project |
 | [split_string.c](https://github.com/vlldnt/holbertonschool-simple_shell/blob/main/split_string.c) | Function that split a string in an array |
 
-## How to use Simple Shell 
+## How to use Simple Shell :pushpin:
 After being comiled the program can be lauch with:
 ```./prog```
 Once in the Simple Shell you can write every knonw in the `PATH` like `ls` `pwd` `whoami`. 
@@ -98,10 +98,11 @@ $ ^C
 --> Here `CTRL+D` <---
 julien@ubuntu:~/shell$ 
 ```
-## MANUAL PAGE SIMPLE SHELL
+## Manual Page Simple Shell :pencil:
 
-[ManPage]!(https://i.goopics.net/wubirh.png)
-## Future features
+![ManPage](https://i.goopics.net/wubirh.png)
+
+## Future features :dart:
 
 - Modify exit built-in to accept status argument
 - Implement `setenv`, `unsetenv`, `cd`, `alias`, `help` and `history`  built-ins
@@ -110,7 +111,7 @@ julien@ubuntu:~/shell$
 - Handle file input for shell commands
 
 
-## Authors
+## Authors :runner:
 
 * Vieilledent Adrien [@vlldnt](https://github.com/vlldnt)
 * Bailly Hugo [@hugo-b-fx](https://github.com/hugo-b-fx)

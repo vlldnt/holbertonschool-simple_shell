@@ -98,7 +98,9 @@ $ ^C
 --> Here `CTRL+D` <---
 julien@ubuntu:~/shell$ 
 ```
+## MANUAL PAGE SIMPLE SHELL
 
+[ManPage]!(https://i.goopics.net/wubirh.png)
 ## Future features
 
 - Modify exit built-in to accept status argument

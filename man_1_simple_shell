@@ -3,54 +3,78 @@
 .SH NAME
 Simple Shell \- A simple UNIX command line interpreter
 .SH SYNOPSIS
-After programm being compiled with gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c -o prog
-Launch your simple shell in you shell terminal by typing ./prog
+.B ./prog
+.br
+.B echo COMMAND | ./prog
 .SH DESCRIPTION
-Simple Shell is a basic command-line interpreter that allows users
-to interact with the operating system by typing commands. It supports
-basic functionality for executing single commands.
-The shell does not support pipes, redirections, or semicolons and
-commands must be typed in full. No support of alias or shortcuts.
+Simple Shell is a basic command-line interpreter that allows users to interact with the operating system by typing commands. It supports basic functionality for executingsingle commands.
+.TP
+The shell does not support pipes, redirections, or semicolons and commands must be typed in full. No support of alias or shortcuts.
+.TP
+When a user runs the shell, it displays a prompt \fB$HugoAdrien/[CWD]/$\fR and waits for user input. After a command is entered, the shell attempts to execute it by invoking the appropriate program. If the command is not found, an error message is displayed. The prompt reappears after every command execution. The shell also handles the following features:
+.SH INSTALLATION
+To install the shell: 
+.br
+1. Clone the repository from GitHub and compile the source code using the following commands:
+.br
+    \(dqgit clone https://github.com/vlldnt/holbertonschool-simple_shell.git\(dq
+.br
 
-When a user runs the shell, it displays a prompt (`$HugoAdrien/[CWD]/$ `) and waits for
-user input. After a command is entered, the shell attempts to execute
-it by invoking the appropriate program. If the command is not found,
-an error message is displayed. The prompt reappears after every command
-execution. The shell also handles the following features:
+2. Compile the source code using the following command:
+    \(dqgcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c -o prog\(dq
+.br
+
+3. Run the shell using the following command:
+    \(dq./prog\(dq for the interactive mode 
+.br
+    \(dqecho COMMAND | ./prog\(dq for the non-interactive mode
+
 .SH MANDATORY FEATURES
-1. Display prompt (`$HugoAdrien/[CWD]/$ `).
+.br
+1. Display prompt \fB$HugoAdrien/[CWD]/$ \fR.
+.br
 2. Wait for user input and process commands.
-3. Execute commands using `execve`.
+.br
+3. Execute commands using \fBexecve\fR.
+.br
 4. Display error messages if the command is not found.
-5. Handle End-of-File `Ctrl+D`.
-6. Handle `CTRL+C` to prevent the shell from quitting when pressed.
-7. Exit the shell cleanly when the `exit` command is entered.
-
+.br
+5. Handle End-of-File \fBCtrl+D\fR.
+.br
+6. Handle \fBCTRL+C\fR to prevent the shell from quitting when pressed.
+.br
+7. Exit the shell cleanly when the \fBexit\fR command is entered.
 .SH SIGNALS HANDLING
-1. \fBCTRL+D\fR: Ends the input stream and terminates the shell session gracefully. If \fBCTRL+D\fR is pressed, the shell will exit.
-2. \fBCTRL+C\fR: The shell ignores \fBCTRL+C\fR signals to prevent the process from terminating when the user presses \fBCTRL+C\fR. The prompt will remain active for further input.
-
+1. CTRL+D: Ends the input stream and terminates the shell session gracefully. If \fBCTRL+D\fR is pressed, the shell will exit.
+.TP
+2. CTRL+C: The shell ignores \fBCTRL+C\fR signals to prevent the process from terminating when the user presses \fBCTRL+C\fR. The prompt will remain active for further input.
 .SH EXIT STATUS
+.br
 On success, the shell returns a status code of 0.
+.br
 On error (e.g., command not found), the shell returns a status code of 2.
 .SH EXAMPLES
+.br
 To execute a command in the shell:
 .RS
 $ ls
 .RE
-
 If a command cannot be found: like 'school'
 .RS
 $ school : command not found
 ./simple_shell: No such file or directory
 .RE
-
 To exit the shell:
 .RS
 $ exit
 .RE
 .SH AUTHOR
 Vieilledent Adrien <vieilledent.adrien@gmail.com>
+.br
 Hugo Bailly <baillyhugo701@gmail.com>
+.SH SEE ALSO
+man sh
+.br
+man bash
 .SH LICENSE
 No special licence, open source project for the Holberton School C#25 -  Toulouse.

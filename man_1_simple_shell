@@ -1,1 +1,56 @@
-man man_1_simple_shell
+.\" Manpage for simple_shell
+.TH SIMPLE_SHELL 1 "HolbertonSchool C#25 2025" "1.0" "User Commands"
+.SH NAME
+Simple Shell \- A simple UNIX command line interpreter
+.SH SYNOPSIS
+After programm being compiled with gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c -o prog
+Launch your simple shell in you shell terminal by typing ./prog
+.SH DESCRIPTION
+Simple Shell is a basic command-line interpreter that allows users
+to interact with the operating system by typing commands. It supports
+basic functionality for executing single commands.
+The shell does not support pipes, redirections, or semicolons and
+commands must be typed in full. No support of alias or shortcuts.
+
+When a user runs the shell, it displays a prompt (`$HugoAdrien/[CWD]/$ `) and waits for
+user input. After a command is entered, the shell attempts to execute
+it by invoking the appropriate program. If the command is not found,
+an error message is displayed. The prompt reappears after every command
+execution. The shell also handles the following features:
+.SH MANDATORY FEATURES
+1. Display prompt (`$HugoAdrien/[CWD]/$ `).
+2. Wait for user input and process commands.
+3. Execute commands using `execve`.
+4. Display error messages if the command is not found.
+5. Handle End-of-File `Ctrl+D`.
+6. Handle `CTRL+C` to prevent the shell from quitting when pressed.
+7. Exit the shell cleanly when the `exit` command is entered.
+
+.SH SIGNALS HANDLING
+1. \fBCTRL+D\fR: Ends the input stream and terminates the shell session gracefully. If \fBCTRL+D\fR is pressed, the shell will exit.
+2. \fBCTRL+C\fR: The shell ignores \fBCTRL+C\fR signals to prevent the process from terminating when the user presses \fBCTRL+C\fR. The prompt will remain active for further input.
+
+.SH EXIT STATUS
+On success, the shell returns a status code of 0.
+On error (e.g., command not found), the shell returns a status code of 2.
+.SH EXAMPLES
+To execute a command in the shell:
+.RS
+$ ls
+.RE
+
+If a command cannot be found: like 'school'
+.RS
+$ school : command not found
+./simple_shell: No such file or directory
+.RE
+
+To exit the shell:
+.RS
+$ exit
+.RE
+.SH AUTHOR
+Vieilledent Adrien <vieilledent.adrien@gmail.com>
+Hugo Bailly <baillyhugo701@gmail.com>
+.SH LICENSE
+No special licence, open source project for the Holberton School C#25 -  Toulouse.

@@ -83,7 +83,7 @@ hsh main.c shell.c test_ls_2
 hsh main.c shell.c test_ls_2
 julien@ubuntu:/#
 ```
-### `CTRL+C` (interrupt signal) and `CTRL+D` (exit) 
+### `CTRL+C` (interrupt signal) and `CTRL+D` (End-of-File) 
 
 ```
 julien@ubuntu:~/shell$ ./prog

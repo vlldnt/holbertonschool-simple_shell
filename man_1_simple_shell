@@ -31,7 +31,7 @@ To install the shell:
 
 .SH MANDATORY FEATURES
 .br
-1. Display prompt \fB$HugoAdrien/[CWD]/$ \fR.
+1. Display prompt \fB$HugoAdrien/[CWD]/$ \fR
 .br
 2. Wait for user input and process commands.
 .br
@@ -68,6 +68,35 @@ To exit the shell:
 .RS
 $ exit
 .RE
+.SH FILES USED FOR THE PROJECT
+Github used for the project: https://github.com/vlldnt/holbertonschool-simple_shell.git
+.br
+
+- \fBbuiltin.c\fP Handle the execution of the built in "exit" and "env"
+.br
+- \fBexecute_command.c\fP Execution the command received from input
+.br
+- \fBfree_ressources.c\fP Tool to free memory of an array of string
+.br
+- \fBget_env.c\fP Tool to get an environment variable
+.br
+- \fBhandle_sigint.c\fP Handle the Signal Interruption (CTRL + C)
+.br
+- \fBmain.c\fP Contains the main function for our simple_shell
+.br
+- \fBprompt.c\fP Display the prompt and checking if input is from a terminal
+.br
+- \fBread_input.c\fP Get and return the input received by the user
+.br
+- \fBAUTHORS\fP List and details on the authors of the project
+.br 
+- \fBman_1_simple_shell\fP Man page of the simple_shell  
+.br 
+- \fBshell.h\fP Header of the project
+.br
+- \fBREADME.md\fP Description of our project
+.br
+- \fBsplit_string.c\fP Function that split a string in an array
 .SH AUTHOR
 Vieilledent Adrien <vieilledent.adrien@gmail.com>
 .br
